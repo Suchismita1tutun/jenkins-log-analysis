@@ -1,0 +1,10 @@
+version: "3.1"
+
+services: 
+  myjenkins:
+    image: jenkins/jenkins:lts
+    container_name: "jenkins-master"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./jenkins_master:/var/jenkins_home:rw 

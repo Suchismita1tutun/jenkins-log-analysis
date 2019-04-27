@@ -1,0 +1,11 @@
+filebeat:
+    image: docker.elastic.co/beats/filebeat:6.7.1
+    container_name: filebeat
+    user: root
+    environment:
+        - strict.perms=false
+    volumes:
+        - './config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro'
+        # - './usr/share/filebeat/data:/usr/share/filebeat/data:rw'
+        - './../jenkins/jenkins_master/jobs:/jenkin-logs'
+      
